@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll1_rv"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
+    
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+        
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+            
+            <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@layout/header_gradient"
+            android:paddingBottom="5dip"
+            android:paddingTop="5dip"
+            android:orientation="horizontal" >
+
+            <!-- Logo Start -->
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:src="@drawable/logo" />
+            <!-- Logo Ends -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ROUTINE VISIT"
+                android:textStyle="bold"
+                android:gravity="bottom|center"
+                android:textColor="#ffffff"
+                android:textAppearance="?android:attr/textAppearanceLarge"  />
+            </LinearLayout>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip"
+                android:layout_marginTop="15dip" >
+
+                <TextView
+                    android:text="Site ID"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/visitSiteId"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:singleLine="true" 
+                    android:hint="XX/XX/XX/NUM"
+                    android:tag='siteId={"required":true,"siteIdCheck":true}'/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:text="Access Code"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/et_rv_accesscode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:singleLine="true" 
+                    android:hint="N Characters"
+                    android:tag='accessCode={"required":true}'/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:text="Diesel Level in T1"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/et_rv_deisellevelint1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:maxLength="4"
+                    android:inputType="number"
+                    android:singleLine="true" 
+                    android:hint="[0-6000]"
+                    android:tag='dieselLevelT1={"required":true,"min":0,"max":6000}'/>
+                   
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:text="Diesel Level in T2"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/et_rv_diesellevelint2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:maxLength="4"
+                    android:inputType="number"
+                    android:singleLine="true" 
+                    android:hint="[0-6000]"
+                    android:tag='dieselLevelT2={"min":0,"max":6000}'/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:text="Run-Hour of Gen1"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/et_rv_runhourofgen1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:maxLength="5"
+                    android:inputType="number"
+                    android:singleLine="true" 
+                    android:hint="[0-30000]"
+                    android:tag='runHourGen1={"min":0,"max":30000}'/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:text="Run-Hour of Gen2"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/et_rv_runhourofgen2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:maxLength="5"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:hint="[0-30000]" 
+                    android:tag='runHourGen2={"min":0,"max":30000}'/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:text="Voltage: N-R(volts)"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/et_rv_voltagenrvolts"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:maxLength="3"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:hint="[0-400]" 
+                    android:tag='voltageNrVolts={"min":0,"max":400}'/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:text="Voltage: N-Y(volts)"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/et_rv_voltagenyvolts"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:maxLength="3"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:hint="[0-400]"
+                    android:tag='voltageNyVolts={"min":0,"max":400}'/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:text="Voltage: N-B(volts)"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/et_rv_voltagenbvolts"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:maxLength="3"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:hint="[0-400]" 
+                    android:tag='voltageNbVolts={"min":0,"max":400}'/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:text="Load: R phase(amps)"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/et_rv_loadrphaseamps"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:maxLength="3"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:hint="[0-999]"
+                    android:tag='loadRPhaseAmps={"min":0,"max":999}'/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:text="Load: Y phase(amps)"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/et_rv_loadyphaseamps"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:maxLength="3"
+                    android:inputType="number"
+                    android:singleLine="true" 
+                    android:hint="[0-999]"
+                    android:tag='loadYPhaseAmps={"min":0,"max":999}'/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:text="Load: B phase(amps) "
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/et_rv_loadbphaseamps"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:maxLength="3"
+                    android:inputType="number"
+                    android:singleLine="true" 
+                    android:hint="[0-999]"
+                    android:tag='loadBPhaseAmps={"min":0,"max":999}'/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:text="Rectifier O/P(volts) "
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/et_rv_rectifieropvoltage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:maxLength="2"
+                    android:inputType="number"
+                    android:singleLine="true" 
+                    android:hint="[0-99]"
+                    android:tag='rectifierOpVoltage={"min":0,"max":999}'/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:text="Rectifier O/P current(amp)"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/et_rv_rectifieropcurrentamp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:maxLength="3"
+                    android:inputType="number"
+                    android:singleLine="true" 
+                    android:hint="[0-999]"
+                    android:tag='rectifierOpCurrentAmp={"min":0,"max":999}'/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:text="Battery capacity(V/AH)"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/et_rv_batterycapacityvah"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:maxLength="4"
+                    android:inputType="number"
+                    android:singleLine="true" 
+                    android:hint="[50-2000]"
+                    android:tag='batteryCapcityV={"min":50,"max":2000}'/>
+            </TableRow>
+            
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 android:padding="10dip" >
+
+                <TextView
+                    android:text="ATS Functional "
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioGroup
+                    android:id="@+id/rg_rv_atsfunctional"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" 
+                    android:tag='atsFunctional={"required":true}'>
+
+                    <RadioButton
+                        android:id="@+id/rb_rv_atsfunctional_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/Yes" />
+
+                    <RadioButton
+                        android:id="@+id/rb_rv_atsfunctional_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/No" />
+                </RadioGroup>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+              android:padding="10dip" >
+
+                <TextView
+                    android:text="ATS Synchronising"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioGroup
+                    android:id="@+id/rb_rv_atssynchronising"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:tag='atsSysncronising={"required":true}'>
+
+                    <RadioButton
+                        android:id="@+id/rb_rv_atssynchronising_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/Yes" />
+
+                    <RadioButton
+                        android:id="@+id/rb_rv_atssynchronising_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/No" />
+                </RadioGroup>
+            </TableRow>
+            
+             <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:text="DRN Book At Site"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioGroup
+                    android:id="@+id/rb_rv_atssynchronising"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" 
+                    android:tag='drnBookAtSite={"required":true}'>
+
+                    <RadioButton
+                        android:id="@+id/rb_rv_atssynchronising_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/Yes" />
+
+                    <RadioButton
+                        android:id="@+id/rb_rv_atssynchronising_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/No" />
+                </RadioGroup>
+            </TableRow>
+           
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:text="Diesel log-book maintained"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioGroup
+                    android:id="@+id/rg_rv_diesellogbookmaintained"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" 
+                    android:tag='dieselLogBookMaintained={"required":true}'>
+
+                    <RadioButton
+                        android:id="@+id/rg_rv_diesellogbookmaintained_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/Yes" />
+
+                    <RadioButton
+                        android:id="@+id/rg_rv_diesellogbookmaintained_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/No" />
+                </RadioGroup>
+            </TableRow>
+            
+             <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:text="Aircon Of Shelter-1 Cooling"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioGroup
+                    android:id="@+id/rb_rv_airconofshelter1cooling"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" 
+                    android:tag='airconShelter1Cooling={"required":true}'>
+
+                    <RadioButton
+                        android:id="@+id/rb_rv_airconofshelter1cooling_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/Yes" />
+
+                    <RadioButton
+                        android:id="@+id/rb_rv_airconofshelter1cooling_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/No" />
+                    
+                    <RadioButton
+                        android:id="@+id/rb_rv_airconofshelter1cooling_na"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Not_Applicable" />
+                </RadioGroup>
+            </TableRow>
+            
+              <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:text="Aircon Of Shelter-2 Cooling"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioGroup
+                    android:id="@+id/rb_rv_airconofshelter2cooling"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" 
+                    android:tag='airconShelter2Cooling={"required":true}'>
+
+                    <RadioButton
+                        android:id="@+id/rb_rv_airconofshelter2cooling_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/Yes" />
+
+                    <RadioButton
+                        android:id="@+id/rb_rv_airconofshelter2cooling_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/No" />
+                    
+                    <RadioButton
+                        android:id="@+id/rb_rv_airconofshelter2cooling_na"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Not_Applicable" />
+                </RadioGroup>
+            </TableRow>
+             <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:text="Aircon Of Shelter-3 Cooling"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioGroup
+                    android:id="@+id/rb_rv_airconofshelter3cooling"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"  android:tag="airconShelter3Cooling">
+
+                    <RadioButton
+                        android:id="@+id/rb_rv_airconofshelter3cooling_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/Yes" />
+
+                    <RadioButton
+                        android:id="@+id/rb_rv_airconofshelter3cooling_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/No" />
+                    
+                    <RadioButton
+                        android:id="@+id/rb_rv_airconofshelter3cooling_na"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Not_Applicable"/>
+                    
+                </RadioGroup>
+            </TableRow>
+            
+              <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:text="Aircon Of Shelter-4 Cooling"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioGroup
+                    android:id="@+id/rb_rv_airconofshelter4cooling"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" 
+                     android:tag='airconShelter4Cooling={"required":true}'>
+
+                    <RadioButton
+                        android:id="@+id/rb_rv_airconofshelter4cooling_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/Yes" />
+
+                    <RadioButton
+                        android:id="@+id/rb_rv_airconofshelter4cooling_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/No" />
+                    
+                    <RadioButton
+                        android:id="@+id/rb_rv_airconofshelter4cooling_na"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Not_Applicable" />
+                </RadioGroup>
+            </TableRow>
+            
+              <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/header"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="10dip">
+
+                <Button
+                    android:id="@+id/btn_rv_submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="2dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_weight="1"
+                    android:background="@drawable/button"
+                    android:paddingLeft="45dip"
+                    android:paddingRight="45dip"
+                    android:text="Save"
+                    android:gravity="center"
+                    android:textColor="#333333" />
+           </LinearLayout>
+        </TableLayout>
+    </ScrollView>
+
+</LinearLayout>

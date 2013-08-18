@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="base.definition"
+		template="/WEB-INF/views/jsp/base/layout.jsp">
+		<put-attribute name="main-content" value="/WEB-INF/views/jsp/base/header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/views/jsp/base/footer.jsp" />
+	</definition>
+
+	<definition name="home" extends="base.definition">
+		<put-attribute name="title" value="Home" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/home/home.jsp" />
+	</definition>
+	<definition name="base.login.definition"
+		template="/WEB-INF/views/jsp/base/login-layout.jsp">
+		<put-attribute name="body" value="" />
+	</definition>	
+	
+	<definition name="routine.new" extends="base.definition">
+		<put-attribute name="title" value="Routine Visit Form" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/site-visit/routine.jsp" />
+	</definition>
+	<definition name="callout.new" extends="base.definition">
+		<put-attribute name="title" value="Callout Visit Form" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/site-visit/callout.jsp" />
+	</definition>
+	<definition name="maintenance.new" extends="base.definition">
+		<put-attribute name="title" value="Maintenance Visit Form" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/site-visit/maintenance.jsp" />
+	</definition>
+	
+	<definition name="admin.users" extends="base.definition">
+		<put-attribute name="title" value="User Administration" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/admin/users.jsp" />
+	</definition>
+	<definition name="routine.list" extends="base.definition">
+		<put-attribute name="title" value="Routine Visit Statistics Form" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/site-visit/routine-visit-statistics.jsp" />
+	</definition>
+	<definition name="diesel.new" extends="base.definition">
+		<put-attribute name="title" value="Diesel Visit Form" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/site-visit/diesel.jsp" />
+	</definition>
+	<definition name="diesel.list" extends="base.definition">
+		<put-attribute name="title" value="Diesel Visit Statistics Form" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/site-visit/diesel-visit-statistics.jsp" />
+	</definition>
+	<definition name="callout.list" extends="base.definition">
+		<put-attribute name="title" value="CallOut Visit Statistics Form" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/site-visit/callout-visit-statistics.jsp" />
+	</definition>
+	<definition name="maintenance.list" extends="base.definition">
+		<put-attribute name="title" value="Maintenance Visit Statistics Form" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/site-visit/maintenance-visit-statistics.jsp" />
+	</definition>
+	<definition name="login" extends="base.login.definition">
+		<put-attribute name="body" value="/WEB-INF/views/jsp/login.jsp" />
+	</definition>
+	<definition name="denied" extends="base.login.definition">
+		<put-attribute name="body" value="/WEB-INF/views/jsp/denied.jsp" />
+	</definition>
+	<definition name="sessiontimeout" extends="base.login.definition">
+		<put-attribute name="body" value="/WEB-INF/views/jsp/session-timed-out.jsp" />
+	</definition>
+	<definition name="under.construction" extends="base.definition">
+		<put-attribute name="body" value="/WEB-INF/views/jsp/under-construction.jsp" />
+	</definition>
+	<definition name="reportDownload.monthlyReport" extends="base.definition">
+		<put-attribute name="title" value="diesel Detail Form" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/site-visit/dieselDetalReportDownload.jsp" />
+	</definition>
+	<definition name="androidDownload.appexe" extends="base.definition">
+		<put-attribute name="title" value="Download Android App" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/download-android-page.jsp" />
+	</definition>
+	
+	<definition name="app.help" extends="base.definition">
+		<put-attribute name="body" value="/WEB-INF/views/jsp/help/help.jsp" />
+	</definition>
+</tiles-definitions>

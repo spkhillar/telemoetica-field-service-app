@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>telenoetica.field.service.app</groupId>
+	<artifactId>telenoetica.field.service.app.entities</artifactId>
+	<version>1.0.0</version>
+<properties>
+    
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<org.codehaus.jackson-version>1.9.11</org.codehaus.jackson-version>
+		<java-version>1.6</java-version>
+    	<maven-compiler-plugin-version>3.0</maven-compiler-plugin-version>
+</properties>
+	
+	<dependencies>
+	    <!-- Jackson JSON Processor -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>${org.codehaus.jackson-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.0-api</artifactId>
+			<version>1.0.1.Final</version>
+		</dependency>
+	</dependencies>
+	<build>
+	    <plugins>
+	        <plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin-version}</version>
+				<configuration>
+					<source>${java-version}</source>
+					<target>${java-version}</target>
+				</configuration>
+			</plugin>
+	        
+	    </plugins>
+	    
+	</build>
+</project>

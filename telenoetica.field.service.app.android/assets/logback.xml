@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <!-- Create a file appender for a log in the application's data directory -->
+  <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>/sdcard/field-app/app.log</file>
+     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <!-- daily rollover -->
+      <fileNamePattern>app.%d{yyyy-MM-dd}.log</fileNamePattern>
+      <!-- keep 7 days' worth of history -->
+      <maxHistory>7</maxHistory>
+    </rollingPolicy>
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>  
+  </appender>
+  
+  <!-- Write INFO (and higher-level) messages to the log file -->
+  <root level="DEBUG">
+    <appender-ref ref="file" />
+  </root>
+</configuration>

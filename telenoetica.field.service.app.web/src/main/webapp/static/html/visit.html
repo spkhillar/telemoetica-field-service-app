@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Visit</title>
+</head>
+<script>
+ function OpenClose(obj) {
+   HeadObj = eval(obj + "_Head");
+   BodyObj = eval(obj + "_Body");
+
+   if (BodyObj.style.display=='block') {
+     BodyObj.style.display='none';
+	 SignOffset = HeadObj.innerHTML.indexOf("-");
+	 HeadObj.innerHTML = "+" + HeadObj.innerHTML.substring(SignOffset+1);
+   } else {
+     BodyObj.style.display='block';
+ 	 SignOffset = HeadObj.innerHTML.indexOf("+");
+ 	 HeadObj.innerHTML = "-" + HeadObj.innerHTML.substring(SignOffset+1);
+   }
+ }
+</script>
+<body>
+<p>This Section contains 4 pages, one for each visit from where user can submit visit information. 
+This web page can be used by field service engineer only when he is not able to submit the information from his android application. 
+There are 4 kinds of visits supported by field application system and 4 pages for the same:</p>
+
+<div id="ClickMe1_Head" onClick="OpenClose('ClickMe1')" onMouseOver="this.style.cursor='pointer';" style="color: #000099;">
+<b>+ Routine Visit</b> 
+</div>
+<div id="ClickMe1_Body" style="display:none; margin-left:20px">
+<p><b>Routine Visit page contains following fields</b></p>
+<p>		
+<BR><b>Site ID :</b> Site where visit is happening.Autofill text with pattern "XX/XX/XX/NNN".Click on the input field and start typing, application will suggest you the possible values</BR>
+<BR><b>Access Code :</b> Num- N digits</BR>
+<BR><b>Diesel Level in T1:</b> Num- 0 TO 6000</BR>
+<BR><b>Diesel Level in T2:</b> Num- 0 TO 6000</BR>
+<BR><b>Run-Hour of Gen1 :</b> Num- 0 TO 30000</BR>
+<BR><b>Run-Hour of Gen2 :</b> Num- 0 TO 30000</BR>
+<BR><b>Voltage: N-R volts :</b> Num- 0 TO 400</BR>
+<BR><b>Voltage: N-Y volts :</b> Num- 0 TO 400</BR>
+<BR><b>Voltage: N-B volts :</b> Num- 0 TO 400</BR>
+<BR><b>Load: R phase Amps :</b> Num- 0 TO 999</BR>
+<BR><b>Load: Y phase Amps :</b> Num- 0 TO 999</BR>
+<BR><b>Load: B phase Amps :</b> Num- 0 TO 999</BR>
+<BR><b>Rectifier O/P voltage :</b> Num- 0 TO 999</BR>
+<BR><b>Rectifier O/P current Amp :</b> Num- 0 TO 999</BR>
+<BR><b>Battery capacity V/AH :</b> Num- 0 TO 50</BR>
+<BR><b>Battery capacity AH :</b> Num- 0 TO 2000</BR>
+<BR><b>ATS Functional :</b> Yes or No</BR>
+<BR><b>ATS Synchronising :</b> Yes or No</BR>
+<BR><b>DRN Book at site :</b> Yes or No</BR>
+<BR><b>Diesel log-book maintained :</b> Yes or No</BR>
+<BR><b>Aircon of shelter-1 cooling :</b> Yes or No or Not applicable</BR>
+<BR><b>Aircon of shelter-2 cooling :</b> Yes or No or Not applicable</BR>
+<BR><b>Aircon of shelter-3 cooling :</b> Yes or No or Not applicable</BR>
+<BR><b>Aircon of shelter-4 cooling :</b> Yes or No or Not applicable</BR>
+</p>
+</div>
+
+<div id="ClickMe2_Head" onClick="OpenClose('ClickMe2')" onMouseOver="this.style.cursor='pointer';" style="color: #000099;">
+<b>+ Diesel Visit</b> 
+</div>
+<div id="ClickMe2_Body" style="display:none; margin-left:20px">
+<p><b>Diesel Visit page contains following fields</b></p>
+<p>		
+<BR><b>Site ID :</b> Site where visit is happening.Autofill text with pattern "XX/XX/XX/NNN".Click on the input field and start typing, application will suggest you the possible values</BR>
+<BR><b>Access Code :</b> Num- N digits</BR>
+<BR><b>DRN Number :</b> Num- Length 7 digits</BR>
+<BR><b>Diesel as transfer or bulk supply :</b> Transfer / Bulk</BR>
+<BR><b>If Transfer, then from which site? :</b> Site from where transfer is happening.Autofill text with pattern "XX/XX/XX/NNN".Click on the input field and start typing, application will suggest you the possible values</BR></BR>
+<BR><b>If Bulk, then name of vendor? :</b> Browse & select</BR>
+<BR><b>Diesel Level in T1 before receipt :</b> Num- 0 TO 6000</BR>
+<BR><b>Diesel Level in T2 before receipt :</b> Num- 0 TO 6000</BR>
+<BR><b>Diesel received (Ltrs) :</b> Num- 0 TO 6000</BR>
+<BR><b>Run-Hour of Gen1  :</b> Num- 0 TO 30000</BR>
+<BR><b>Run-Hour of Gen2  :</b> Num- 0 TO 30000</BR>
+<BR><b>DRN Book at site :</b> Yes or No</BR>
+<BR><b>Diesel log-book maintained :</b> Yes or No</BR>
+<BR><b>PHCN Installed :</b> Yes or No</BR>
+<BR><b>PHCN Hrs per day :</b> Num- 0 TO 24</BR>
+<BR><b>Hybrid/PIU installed :</b> Yes or No</BR>
+<BR><b>Hybrid/PIU hrs per Day :</b> Num- 0 TO 24</BR>
+</p>
+</div>
+
+<div id="ClickMe3_Head" onClick="OpenClose('ClickMe3')" onMouseOver="this.style.cursor='pointer';" style="color: #000099;">
+<b>+ Callout Visit</b> 
+</div>
+<div id="ClickMe3_Body" style="display:none; margin-left:20px">
+<p><b>Diesel Visit page contains following fields</b></p>
+<p>		
+<BR><b>Site ID :</b> Site where visit is happening.Autofill text with pattern "XX/XX/XX/NNN".Click on the input field and start typing, application will suggest you the possible values</BR>
+<BR><b>Access Code :</b> Num- N digits</BR>
+<BR><b>Call-out CSR or TT number:</b> Number</BR>
+<BR><b>Time when complain received :</b> Date and Time</BR>
+<BR><b>Time when reached to site :</b>Date and Time,should be after above incident.</BR>
+<BR><b>Time when fault resolved :</b>Date and Time, should be after above 2 incidents.</BR>
+<BR><b>Customer1 Impacted :</b>Browse & select</BR>
+<BR><b>Customer2 Impacted :</b>Browse & select</BR>
+<BR><b>Customer3 Impacted :</b>Browse & select</BR>
+<BR><b>Customer4 Impacted :</b>Browse & select</BR>
+<BR><b>Main Category of fault :</b>Browse & select</BR>
+<BR><b>Equipment/ Component that caused fault :</b>Browse & select</BR>
+<BR><b>Equipment/ Componenet repaired :</b>Browse & select</BR>
+<BR><b>Equipment/ Componenet replaced :</b>Browse & select</BR>
+<BR><b>Is the fix/ resolution temporary or permanent? :</b>Temporary or Permanent</BR> 
+<BR><b>Actions required for permanent resolution :</b>Alphanumeric - 0 TO 50</BR>
+</p>
+</div>
+
+<div id="ClickMe4_Head" onClick="OpenClose('ClickMe4')" onMouseOver="this.style.cursor='pointer';" style="color: #000099;">
+<b>+ Maintenance Visit</b> 
+</div>
+<div id="ClickMe4_Body" style="display:none; margin-left:20px">
+<p><b>Maintenance Visit page contains following fields</b></p>
+<p>		
+<BR><b>Site ID :</b> Site where visit is happening.Autofill text with pattern "XX/XX/XX/NNN".Click on the input field and start typing, application will suggest you the possible values</BR>
+<BR><b>Access Code :</b> Num- N digits</BR>
+<BR><b>Category of maintenance:</b>Browse & select</BR>
+<BR><b>Spares used/ Items replaced- 1:</b>Browse & select</BR>
+<BR><b>Spares used/ Items replaced-2:</b>Browse & select</BR>
+<BR><b>Spares used/ Items replaced-3:</b>Browse & select</BR>
+<BR><b>Spares used/ Items replaced-4:</b>Browse & select</BR>
+<BR><b>Spares used/ Items replaced-5:</b>Browse & select</BR>
+<BR><b>Spares used/ Items replaced-6:</b>Browse & select</BR>
+<BR><b>Consumables used 1 :</b>Browse & select</BR>
+<BR><b>Consumables used 2 :</b>Browse & select</BR>
+<BR><b>Consumables used 3 :</b>Browse & select</BR>
+<BR><b>Consumables used 4 :</b>Browse & select</BR>
+<BR><b>Consumables used 5 :</b>Browse & select</BR>
+<BR><b>Consumables used 6 :</b>Browse & select</BR>
+<BR><b>Run-Hours after PM of DG1 :</b> Num- 0 TO 30000</BR>
+<BR><b>Run-Hours after PM of DG2 :</b> Num- 0 TO 30000</BR>
+</p>
+</div>
+
+<p>Only Admin users and Field service Engineers(FSE)has access to this page.</p>
+</body>
+</html>

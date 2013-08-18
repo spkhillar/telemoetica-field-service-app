@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p" 
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/security 
+		http://www.springframework.org/schema/security/spring-security-3.1.xsd
+		http://www.springframework.org/schema/util 
+		http://www.springframework.org/schema/util/spring-util-3.1.xsd">
+
+	<http pattern="/resources" security="none" />
+	
+	<http auto-config="true"  use-expressions="true">
+		<intercept-url pattern="/login" access="permitAll"/>
+		<intercept-url pattern="/logout" access="permitAll"/>
+		<intercept-url pattern="/" access="hasAnyRole('ROLE_FSE','ROLE_CSOE','ROLE_OPS_MANAGER','ROLE_ADMIN')"/>
+		<intercept-url pattern="/rest/auth" access="hasAnyRole('ROLE_FSE')"/>
+		<intercept-url pattern="/home" access="hasAnyRole('ROLE_FSE','ROLE_CSOE','ROLE_OPS_MANAGER','ROLE_ADMIN')"/>
+		<intercept-url pattern="/rest/home" access="hasAnyRole('ROLE_FSE','ROLE_CSOE','ROLE_OPS_MANAGER','ROLE_ADMIN')"/>
+		<intercept-url pattern="/user/**" access="hasAnyRole('ROLE_CSOE','ROLE_OPS_MANAGER','ROLE_ADMIN')"/>
+		<intercept-url pattern="/routine/**" access="hasAnyRole('ROLE_FSE','ROLE_CSOE','ROLE_OPS_MANAGER','ROLE_ADMIN')"/>
+		<intercept-url pattern="/diesel/**" access="hasAnyRole('ROLE_FSE','ROLE_CSOE','ROLE_OPS_MANAGER','ROLE_ADMIN')"/>
+		<intercept-url pattern="/callout/**" access="hasAnyRole('ROLE_FSE','ROLE_CSOE','ROLE_OPS_MANAGER','ROLE_ADMIN')"/>
+		<intercept-url pattern="/maintenance/**" access="hasAnyRole('ROLE_FSE','ROLE_CSOE','ROLE_OPS_MANAGER','ROLE_ADMIN')"/>
+		
+		<session-management invalid-session-url="/logout/session" session-authentication-error-url="/sessiontimeout" session-fixation-protection="newSession">
+			
+		</session-management>
+		
+		<form-login login-page="/login" 
+			authentication-failure-url="/login/failure" 
+			default-target-url="/"/>
+		
+		<access-denied-handler error-page="/denied"/>
+		
+		<logout invalidate-session="true" delete-cookies="JSESSIONID"/>
+	</http>
+	
+	<authentication-manager>
+	        <authentication-provider user-service-ref="customUserDetailService">
+	        		<password-encoder hash="sha-256">
+	        		<salt-source user-property="username"/>
+	        		</password-encoder>
+	        </authentication-provider>
+	</authentication-manager>
+</beans:beans>

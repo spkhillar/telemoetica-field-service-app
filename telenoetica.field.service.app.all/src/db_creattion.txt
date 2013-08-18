@@ -1,0 +1,143 @@
+CREATE DATABASE field_service_db DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+
+CREATE DATABASE field_service_db_test DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+
+create table user(
+id bigint(20) AUTO_INCREMENT PRIMARY KEY,
+username varchar(250),
+password varchar(250),
+first_name varchar(250),
+last_name varchar(250),
+email varchar(250),
+enabled bit(1),
+created_at timestamp,
+version int)ENGINE=innodb;
+
+create table role(
+id bigint(20) AUTO_INCREMENT PRIMARY KEY,
+name varchar(250))ENGINE=innodb;
+
+create table permission(
+id bigint(20) AUTO_INCREMENT PRIMARY KEY,
+name varchar(250))ENGINE=innodb;
+
+create table user_role(
+id bigint(20) AUTO_INCREMENT PRIMARY KEY,
+user_id bigint(20),
+role_id bigint(20),
+FOREIGN KEY (role_id) REFERENCES role(id),
+FOREIGN KEY (user_id) REFERENCES user(id))ENGINE=innodb;
+
+create table role_permission(
+id bigint(20) AUTO_INCREMENT PRIMARY KEY,
+role_id bigint(20),
+permission_id bigint(20),
+FOREIGN KEY (role_id) REFERENCES role(id),
+FOREIGN KEY (permission_id) REFERENCES permission(id))ENGINE=innodb;
+
+
+
+create table site(
+id bigint(20) AUTO_INCREMENT PRIMARY KEY,
+name varchar(250),
+created_at timestamp,
+version int)ENGINE=innodb;
+
+create table routine_visit(
+id bigint(20) AUTO_INCREMENT PRIMARY KEY,
+site_id bigint(20),
+access_code bigint(20),
+diesel_level_t1 bigint(20),
+diesel_level_t2 bigint(20),
+run_hour_gen1 bigint(20),
+run_hour_gen2 bigint(20),
+voltage_nr_volts bigint(20),
+voltage_ny_volts bigint(20),
+voltage_nb_volts bigint(20),
+load_r_phase_amps bigint(20),
+load_y_phase_amps bigint(20),
+load_b_phase_amps bigint(20),
+rectifier_op_voltage bigint(20),
+rectifier_op_current_amp bigint(20),
+battery_capcity_v bigint(20),
+battery_capcity_ah bigint(20),
+ats_functional bit(1),
+ats_sysncronising bit(1),
+drn_book_at_site bit(1),
+diesel_log_book_maintained bit(1),
+user_id bigint(20),
+created_at timestamp,
+version int,
+FOREIGN KEY (site_id) REFERENCES site(id),
+FOREIGN KEY (user_id) REFERENCES user(id))ENGINE=innodb;
+
+
+create table diesel_visit(
+id bigint(20) AUTO_INCREMENT PRIMARY KEY,
+site_id bigint(20),
+access_code varchar(250),
+drn_number varchar(250),
+diesel_transfer_or_bulk_supply varchar(250),
+transfer_from_which_site bigint(20),
+bulk_name_of_vendor varchar(250),
+diesel_level_t1_before_visit bigint(20),
+diesel_level_t2_before_visit bigint(20),
+diesel_received_ltrs bigint(20),
+run_hour_gen1 bigint(20),
+run_hour_gen2 bigint(20),
+drn_book_at_site bit(1),
+diesel_log_book_maintained bit(1),
+user_id bigint(20),
+created_at timestamp,
+version int,
+FOREIGN KEY (site_id) REFERENCES site(id),
+FOREIGN KEY (user_id) REFERENCES user(id))ENGINE=innodb;
+
+create table maintenance_visit(
+id bigint(20) AUTO_INCREMENT PRIMARY KEY,
+site_id bigint(20),
+access_code varchar(250),
+category_of_maintenance varchar(250),
+spares_used_items_replaced1 varchar(250),
+spares_used_items_replaced2 varchar(250),
+spares_used_items_replaced3 varchar(250),
+spares_used_items_replaced4 varchar(250),
+spares_used_items_replaced5 varchar(250),
+spares_used_items_replaced6 varchar(250),
+cosumables_used1 varchar(250),
+cosumables_used2 varchar(250),
+cosumables_used3 varchar(250),
+cosumables_used4 varchar(250),
+cosumables_used5 varchar(250),
+cosumables_used6 varchar(250),
+run_hours_after_pmd_g1 bigint(20),
+run_hour_after_pmd_g2 bigint(20),
+user_id bigint(20),
+created_at timestamp,
+version int,
+FOREIGN KEY (site_id) REFERENCES site(id),
+FOREIGN KEY (user_id) REFERENCES user(id))ENGINE=innodb;
+
+create table call_out_visit(
+id bigint(20) AUTO_INCREMENT PRIMARY KEY,
+site_id bigint(20),
+access_code varchar(250),
+call_out_csr_or_tt_number varchar(250),
+time_complain_received timestamp,
+time_reached_to_site timestamp,
+time_fault_reserved timestamp,
+customer1_impacted varchar(250),
+customer2_impacted varchar(250),
+customer3_impacted varchar(250),
+customer4_impacted varchar(250),
+main_category_of_fault varchar(250),
+equipment_component_caused_fault varchar(250),
+equipment_component_repaired varchar(250),
+equipment_component_replaced varchar(250),
+fix_resolution_temporary_or_permanent varchar(250),
+actions_required_for_permanent_resolution varchar(250),
+user_id bigint(20),
+created_at timestamp,
+version int,
+FOREIGN KEY (site_id) REFERENCES site(id),
+FOREIGN KEY (user_id) REFERENCES user(id))ENGINE=innodb;

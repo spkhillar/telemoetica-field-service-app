@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll4_cv"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
+
+    <ScrollView
+        android:id="@+id/tableLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <TableLayout
+            android:id="@+id/tableLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <LinearLayout
+                android:id="@+id/header"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@layout/header_gradient"
+                android:orientation="horizontal"
+                android:paddingBottom="5dip"
+                android:paddingTop="5dip" >
+
+                <!-- Logo Start -->
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:src="@drawable/logo" />
+                <!-- Logo Ends -->
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|top"
+                    android:text="CALL-OUT VISIT"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dip"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Site ID"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/visitSiteId"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:singleLine="true"
+                    android:hint="XX/XX/XX/NUM"
+                    android:tag="siteId={&quot;required&quot;:true,&quot;siteIdCheck&quot;:true}" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Access Code"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/button1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:singleLine="true"
+                    android:hint="N Characters"
+                    android:tag="accessCode={&quot;required&quot;:true}" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Call-out CSR  Number"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/button1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:singleLine="true"
+                    android:tag="callOutCsrOrTtNumber={&quot;required&quot;:true}" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow111"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Complaint received"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Button
+                    android:id="@+id/datePicker1"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/button"
+                    android:text="Date and Time"
+                    android:textColor="#333333" />
+            </TableRow>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutComplaint"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="right"
+                android:orientation="horizontal"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/complaintRecievedDateTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dip"
+                    android:layout_marginRight="10dip"
+                    android:gravity="left"
+                    android:text=""
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/complaintRecievedDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/complaintRecievedTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dip"
+                    android:layout_marginRight="10dip"
+                    android:gravity="right"
+                    android:text="" />
+            </LinearLayout>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Site arrival time"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Button
+                    android:id="@+id/datePicker2"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/button"
+                    android:text="Date and Time"
+                    android:textColor="#333333" />
+            </TableRow>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutSiteReached"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="right"
+                android:orientation="horizontal"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/timeReachedDateTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dip"
+                    android:layout_marginRight="10dip"
+                    android:gravity="left"
+                    android:text=""
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/timeReachedDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/timeReachedTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dip"
+                    android:layout_marginRight="10dip"
+                    android:gravity="right"
+                    android:text="" />
+            </LinearLayout>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Fault Resolution Time"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Button
+                    android:id="@+id/datePicker3"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/button"
+                    android:text="Date and Time"
+                    android:textColor="#333333" />
+            </TableRow>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutFault"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="right"
+                android:orientation="horizontal"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/faultResolvedDateTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dip"
+                    android:layout_marginRight="10dip"
+                    android:gravity="left"
+                    android:text=""
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/faultResolvedDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/faultResolvedTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dip"
+                    android:layout_marginRight="10dip"
+                    android:gravity="right"
+                    android:text="" />
+            </LinearLayout>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Customer 1 Impacted"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spinner_customer1"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:prompt="@string/spinner_title"
+                    android:tag="customer1Impacted" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Customer 2 impacted"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spinner_customer2"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:prompt="@string/spinner_title"
+                    android:tag="customer2Impacted" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Customer 3 impacted"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spinner_customer3"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:prompt="@string/spinner_title"
+                    android:tag="customer3Impacted" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Customer 4 impacted"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spinner_customer4"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:prompt="@string/spinner_title"
+                    android:tag="customer4Impacted" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Category of fault"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spinner_main_category_of_fault"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="mainCategoryOfFault" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Equip/Cmpnt causing fault"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spinner_equipment_causing_fault"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="equipmentComponentCausedFault" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Equip/Comp Repaired"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spinner_equip_comp_repaired"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:prompt="@string/spinner_title"
+                    android:tag="equipmentComponentRepaired" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Equip/Comp Replaced"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spinner_equip_comp_replaced"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:prompt="@string/spinner_title"
+                    android:tag="equipmentComponentReplaced" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text=" Fix/Resolution:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioGroup
+                    android:id="@+id/radiotp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:tag="fixResolutionTemporaryOrPermanent" >
+
+                    <RadioButton
+                        android:id="@+id/radiotemporary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/Temporary" />
+
+                    <RadioButton
+                        android:id="@+id/radiopermanent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Permanent" />
+                </RadioGroup>
+            </TableRow>
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:text="Actions required for permanent resolution"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/button1"
+                android:layout_width="fill_parent"
+                android:layout_height="100dip"
+                android:layout_marginLeft="4dip"
+                android:layout_marginRight="4dip"
+                android:background="@drawable/shape"
+                android:gravity="center_horizontal"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip"
+                android:shape="rectangle"
+                android:singleLine="true"
+                android:hint="[50 characters]"
+                android:tag="actionsRequiredForPermanentResolution" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/header"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="10dip" >
+
+                <Button
+                    android:id="@+id/btn_cv_submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="2dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_weight="1"
+                    android:background="@drawable/button"
+                    android:gravity="center"
+                    android:paddingLeft="45dip"
+                    android:paddingRight="45dip"
+                    android:text="Save"
+                    android:textColor="#333333" />
+            </LinearLayout>
+        </TableLayout>
+    </ScrollView>
+
+</LinearLayout>

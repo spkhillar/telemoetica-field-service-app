@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff">
+
+        <!-- Header  Starts -->
+
+        <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@layout/header_gradient"
+            android:paddingBottom="5dip"
+            android:paddingTop="5dip" >
+
+            <!-- Logo Start -->
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:src="@drawable/logo" />
+            <!-- Logo Ends -->
+        </LinearLayout>
+        <!-- Header Ends -->
+        <!-- Footer Start -->
+
+        <LinearLayout
+            android:id="@+id/footer"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/header"
+            android:orientation="vertical"
+            android:layout_marginTop="20dip">
+
+            <TextView
+                android:id="@+id/widget35"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|top"
+                android:text="MENU"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button_rv"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dip"
+                android:layout_marginRight="8dip"
+                android:layout_marginTop="30dip"
+                android:background="@drawable/button"
+                android:text="Routine Visit"
+                android:textColor="#333333" />
+
+            <Button
+                android:id="@+id/button_dv"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dip"
+                android:layout_marginRight="8dip"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/button"
+                android:text="Diesel Visit"
+                android:textColor="#333333" />
+
+            <Button
+                android:id="@+id/button_mv"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dip"
+                android:layout_marginRight="8dip"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/button"
+                android:text="Maintenance Visit"
+                android:textColor="#333333" />
+
+            <Button
+                android:id="@+id/button_cv"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dip"
+                android:layout_marginRight="8dip"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/button"
+                android:text="Call-Out Visit"
+                android:textColor="#333333" />
+            
+             <Button
+                android:id="@+id/button_send_to_server"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dip"
+                android:layout_marginRight="8dip"
+                android:background="@drawable/button"
+                android:layout_marginTop="10dip"
+                android:text="Send To Server"
+                android:textColor="#333333" />
+
+            <!-- <Button
+                android:id="@+id/button_configure"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dip"
+                android:layout_marginRight="8dip"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/button"
+                android:text="Configure"
+                android:textColor="#333333" /> -->
+
+            <Button
+                android:id="@+id/button_exit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dip"
+                android:layout_marginRight="8dip"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/button"
+                android:text="Exit"
+                android:textColor="#333333" />
+        </LinearLayout>
+
+        <!-- Main Menu Form -->
+
+    </RelativeLayout>
+
+</ScrollView>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll6_report"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <LinearLayout
+                android:id="@+id/header"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@layout/header_gradient"
+                android:orientation="horizontal"
+                android:paddingBottom="5dip"
+                android:paddingTop="5dip" >
+
+                <!-- Logo Start -->
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:textStyle="bold"
+                    android:src="@drawable/logo" />
+                <!-- Logo Ends -->
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom|center"
+                    android:text="REPORT"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dip"
+                android:padding="10dip" >
+
+                <TextView
+                    android:text="Routine Visit"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="20dp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/reportRoutineVisit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:text="0"
+                    android:textStyle="bold"
+                    android:singleLine="true"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </TableRow>
+            
+             <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dip"
+                android:padding="10dip" >
+
+                <TextView
+                    android:text="Diesel Visit"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="20dp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/reportDieselVisit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:text="0"
+                    android:textStyle="bold"
+                    android:singleLine="true"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </TableRow>
+            
+              <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dip"
+                android:padding="10dip" >
+
+                <TextView
+                    android:text="Maintenance Visit"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="20dp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/reportMaintenanceVisit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dip"
+                    android:text="0"
+                    android:textStyle="bold"
+                    android:paddingRight="10dip"
+                    android:singleLine="true"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </TableRow>
+            
+               <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dip"
+                android:padding="10dip" >
+
+                <TextView
+                    android:text="Call-Out Visit"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="20dp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/reportCalloutVisit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:text="0"
+                    android:textStyle="bold"
+                    android:singleLine="true"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </TableRow>
+            
+               <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/header"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="10dip">
+
+                <Button
+                    android:id="@+id/btnReportOk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="2dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_weight="1"
+                    android:background="@drawable/button"
+                    android:paddingLeft="45dip"
+                    android:paddingRight="45dip"
+                    android:text="OK"
+                    android:gravity="center"
+                    android:textColor="#333333" />
+           </LinearLayout>
+            </TableLayout>
+            </ScrollView>
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HTN Field Application</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="Yes">Yes</string>
+    <string name="No">No</string>
+    <string name="Temporary">Temporary</string>
+    <string name="Permanent">Permanent</string>
+    <string name="Transfer">Transfer</string>
+    <string name="Bulk">Bulk</string>
+    <string name="chk_reset_sys">Reset System</string>
+    <string name="chk_reset_config">Reset Configuration</string>
+    <string name="Not_Applicable">Not Applicable</string>
+    <string name="btn_display">Display</string>
+    <string name="spinner_title">Browse and Select</string>
+    <string name="host_id">http://197.242.243.7:8080/fieldapp</string>
+</resources>

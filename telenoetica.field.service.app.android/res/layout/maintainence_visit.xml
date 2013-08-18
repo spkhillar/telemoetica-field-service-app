@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll3_mv"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
+
+    <ScrollView
+        android:id="@+id/sv1_mv"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <TableLayout
+            android:id="@+id/tl1_mv"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <LinearLayout
+                android:id="@+id/header"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@layout/header_gradient"
+                android:orientation="horizontal"
+                android:paddingBottom="5dip"
+                android:paddingTop="5dip" >
+
+                <!-- Logo Start -->
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:src="@drawable/logo" />
+                <!-- Logo Ends -->
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|top"
+                    android:text="MAINTENANCE VISIT"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TableRow
+                android:id="@+id/tr1_mv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dip"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/tv1_mv"
+                    android:text="Site ID"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/visitSiteId"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:singleLine="true"
+                    android:hint="XX/XX/XX/NUM"
+                    android:tag="siteId={&quot;required&quot;:true,&quot;siteIdCheck&quot;:true}" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr2_mv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/tv2_mv"
+                    android:ems="5"
+                    android:text="Access Code"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/et2_mv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:singleLine="true"
+                    android:hint="N Characters"
+                    android:tag="accessCode={&quot;required&quot;:true}" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr3_mv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/tv3_mv"
+                    android:text="Category Of Maintainence"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spinner_category_of_maintainence"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_weight="1"
+                    android:prompt="@string/spinner_title"
+                    android:tag="categoryOfMaintenance" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr9_mv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@id/tr9_mv"
+                    android:text="Spares Used/Items Replaced 1"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spinner_spares1"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:prompt="@string/spinner_title"
+                    android:tag="sparesUsedItemsReplaced1" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr10_mv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/tv10_mv"
+                    android:text="Spares Used/Items Replaced 2"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spinner_spares2"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:prompt="@string/spinner_title"
+                    android:tag="sparesUsedItemsReplaced2" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr11_mv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/tv11_mv"
+                    android:text="Spares Used/Items Replaced 3"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spinner_spares3"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:prompt="@string/spinner_title"
+                    android:tag="sparesUsedItemsReplaced3" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr12_mv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/tv12_mv"
+                    android:text="Spares Used/Items Replaced 4"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spinner_spares4"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:prompt="@string/spinner_title"
+                    android:tag="sparesUsedItemsReplaced4" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr13_mv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/tr13_mv"
+                    android:text="Spares Used/Items Replaced 5"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spinner_spares5"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:prompt="@string/spinner_title"
+                    android:tag="sparesUsedItemsReplaced5" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr14_mv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/tv14_mv"
+                    android:text="Spares Used/Items Replaced 6"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spinner_spares6"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:prompt="@string/spinner_title"
+                    android:tag="sparesUsedItemsReplaced6" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr16_mv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/tv16_mv"
+                    android:text="Consumable Used 1"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spinner_consumable1"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:prompt="@string/spinner_title"
+                    android:tag="cosumablesUsed1" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr17_mv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/tv17_mv"
+                    android:text="Consumable Used 2"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spinner_consumable2"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:prompt="@string/spinner_title"
+                    android:tag="cosumablesUsed2" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr18_mv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/tv18_mv"
+                    android:text="Consumable Used 3"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spinner_consumable3"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:prompt="@string/spinner_title"
+                    android:tag="cosumablesUsed3" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr19_mv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/tv19_mv"
+                    android:text="Consumable Used 4"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spinner_consumable4"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:prompt="@string/spinner_title"
+                    android:tag="cosumablesUsed4" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr20_mv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/tv20_mv"
+                    android:text="Consumable Used 5"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spinner_consumable5"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:prompt="@string/spinner_title"
+                    android:tag="cosumablesUsed5" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr20_mv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/tv20_mv"
+                    android:text="Consumable Used 6"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spinner_consumable6"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:prompt="@string/spinner_title"
+                    android:tag="cosumablesUsed6" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr21_mv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/tv21_mv"
+                    android:text="Run-Hours after Maint. of DG1"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/et3_mv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:maxLength="5"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:singleLine="true"
+                    android:hint="[0-30000]"
+                    android:tag="runHoursAfterPmdG1={&quot;required&quot;:true,&quot;min&quot;:0,&quot;max&quot;:30000}" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr22_mv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/tv22_mv"
+                    android:text="Run-Hours after Maint. of DG2"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/et4_mv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:maxLength="5"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:singleLine="true"
+                    android:hint="[0-30000]"
+                    android:tag="runHoursAfterPmdG2={&quot;required&quot;:true,&quot;min&quot;:0,&quot;max&quot;:30000}" />
+            </TableRow>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/header"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="10dip" >
+
+                <Button
+                    android:id="@+id/btn_mv_submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="2dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_weight="1"
+                    android:background="@drawable/button"
+                    android:gravity="center"
+                    android:paddingLeft="45dip"
+                    android:paddingRight="45dip"
+                    android:text="Save"
+                    android:textColor="#333333" />
+            </LinearLayout>
+        </TableLayout>
+    </ScrollView>
+
+</LinearLayout>

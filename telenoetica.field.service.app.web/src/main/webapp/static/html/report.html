@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<script>
+ function OpenClose(obj) {
+   HeadObj = eval(obj + "_Head");
+   BodyObj = eval(obj + "_Body");
+
+   if (BodyObj.style.display=='block') {
+     BodyObj.style.display='none';
+	 SignOffset = HeadObj.innerHTML.indexOf("-");
+	 HeadObj.innerHTML = "+" + HeadObj.innerHTML.substring(SignOffset+1);
+   } else {
+     BodyObj.style.display='block';
+ 	 SignOffset = HeadObj.innerHTML.indexOf("+");
+ 	 HeadObj.innerHTML = "-" + HeadObj.innerHTML.substring(SignOffset+1);
+   }
+ }
+</script>
+<body>
+<p><b>This section contains 6 pages : </b></p>
+<p>1.	Routine Visit Report: This page contains list of all routine visits till date with filter, refresh and export to excel functions. </p>
+<p>2.	Callout Visit Report: This page contains list of all Callout Visit till date with filter, refresh and export to excel functions.</p>
+<p>3.	Diesel Visit Report: This page contains list of all Diesel Visit till date with filter, refresh and export to excel functions.</p>
+<p>4.	Maintenance Visit Report: This page contains list of all Maintenance Visit till date with filter, refresh and export to excel functions.</p>
+<p>5.	Diesel Details reports: This page contains list of Diesel Details reports generated in last 12 months and link to download the same.
+Diesel Details reports are generated on month end and send via email to configured mailing list.</p>
+<p>6.	Spares Utilization reports: This page contains list of Diesel Details reports generated in last 12 months and link to download the same.
+Spares Utilization reports are generated on month end and send via email to configured mailing list.</p>
+
+</p>Other common buttons(functions) at the bottom of the page are:</p>
+
+<div id="ClickMe1_Head" onClick="OpenClose('ClickMe1')" onMouseOver="this.style.cursor='pointer';" style="color: #000099;">
+<b>+ Filter</b> 
+</div>
+<div id="ClickMe1_Body" style="display:none; margin-left:20px">
+<p><b>Filter allow you to manage the list of information on grid, To create a filter</b></p>
+<p>		1.	Click the filter button in your page. A window that allows you to specify your search criteria will appear.</p>
+<p>		2.	Enter your search criteria. If you want to check that your search worked correctly, click the find button..</p>
+<p>		3.	You can provide multiple search criteria by using (+) sign appears in the pop-up. Click the find button and refined list based on your search criteria will appear in grid </p>
+<p>		4.	If you want to remove a search criteri then use (-) sign appearing next to criteria</p>
+<p>		5.	Use reset to remove all search criteria</p></div>
+
+<div id="ClickMe2_Head" onClick="OpenClose('ClickMe2')" onMouseOver="this.style.cursor='pointer';" style="color: #000099;">
+<b>+ Refresh</b> 
+</div>
+<div id="ClickMe2_Body" style="display:none; margin-left:20px">
+<p><b>A refresh or reload will cause the browser to re-check with the web server to make sure it has the latest copy of the web page you are viewing.to refresh the grid</b></p>
+<p>		1.	Click the Refresh button in your page. Grid data will be reloaded from the server to ensure that you are viewing the latest copy.</p>
+</div>
+
+<div id="ClickMe6_Head" onClick="OpenClose('ClickMe6')" onMouseOver="this.style.cursor='pointer';" style="color: #000099;">
+<b>+ Export</b> 
+</div>
+<div id="ClickMe6_Body" style="display:none; margin-left:20px">
+<p><b>Export allow you to To export the data in excel format on user system. If filter is applied then only filtered record from the screen will be exported to excel, to export</b></p>
+<p>		1.	Click the export button in your page. A window will appear to save or open the excel.</p>
+<p>		2.	based on your selection file will be saved on system.</p></div>
+</body>
+</html>

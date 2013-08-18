@@ -1,0 +1,889 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+	<changeSet author="shiv prasad khillar" id="1366412359126-1">
+		<createTable tableName="call_out_visit">
+			<column autoIncrement="true" name="id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true" />
+			</column>
+			<column name="site_id" type="BIGINT" />
+			<column name="access_code" type="VARCHAR(250)" />
+			<column name="call_out_csr_or_tt_number" type="VARCHAR(250)" />
+			<column defaultValueComputed="CURRENT_TIMESTAMP" name="time_complain_received"
+				type="TIMESTAMP">
+				<constraints nullable="false" />
+			</column>
+			<column defaultValue="0000-00-00 00:00:00" name="time_reached_to_site"
+				type="TIMESTAMP">
+				<constraints nullable="false" />
+			</column>
+			<column defaultValue="0000-00-00 00:00:00" name="time_fault_reserved"
+				type="TIMESTAMP">
+				<constraints nullable="false" />
+			</column>
+			<column name="customer1_impacted" type="VARCHAR(250)" />
+			<column name="customer2_impacted" type="VARCHAR(250)" />
+			<column name="customer3_impacted" type="VARCHAR(250)" />
+			<column name="customer4_impacted" type="VARCHAR(250)" />
+			<column name="main_category_of_fault" type="VARCHAR(250)" />
+			<column name="equipment_component_caused_fault" type="VARCHAR(250)" />
+			<column name="equipment_component_repaired" type="VARCHAR(250)" />
+			<column name="equipment_component_replaced" type="VARCHAR(250)" />
+			<column name="fix_resolution_temporary_or_permanent" type="VARCHAR(250)" />
+			<column name="actions_required_for_permanent_resolution" type="VARCHAR(250)" />
+			<column name="user_id" type="BIGINT" />
+			<column defaultValue="0000-00-00 00:00:00" name="created_at"
+				type="TIMESTAMP">
+				<constraints nullable="false" />
+			</column>
+			<column name="version" type="INT" />
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1366412359126-2">
+		<createTable tableName="diesel_visit">
+			<column autoIncrement="true" name="id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true" />
+			</column>
+			<column name="site_id" type="BIGINT" />
+			<column name="access_code" type="VARCHAR(250)" />
+			<column name="drn_number" type="VARCHAR(250)" />
+			<column name="diesel_transfer_or_bulk_supply" type="VARCHAR(250)" />
+			<column name="transfer_from_which_site" type="BIGINT" />
+			<column name="bulk_name_of_vendor" type="VARCHAR(250)" />
+			<column name="diesel_level_t1_before_visit" type="BIGINT" />
+			<column name="diesel_level_t2_before_visit" type="BIGINT" />
+			<column name="diesel_received_ltrs" type="BIGINT" />
+			<column name="run_hour_gen1" type="BIGINT" />
+			<column name="run_hour_gen2" type="BIGINT" />
+			<column name="drn_book_at_site" type="BIT" />
+			<column name="diesel_log_book_maintained" type="BIT" />
+			<column name="user_id" type="BIGINT" />
+			<column defaultValueComputed="CURRENT_TIMESTAMP" name="created_at"
+				type="TIMESTAMP">
+				<constraints nullable="false" />
+			</column>
+			<column name="version" type="INT" />
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1366412359126-3">
+		<createTable tableName="maintenance_visit">
+			<column autoIncrement="true" name="id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true" />
+			</column>
+			<column name="site_id" type="BIGINT" />
+			<column name="access_code" type="VARCHAR(250)" />
+			<column name="category_of_maintenance" type="VARCHAR(250)" />
+			<column name="spares_used_items_replaced1" type="VARCHAR(250)" />
+			<column name="spares_used_items_replaced2" type="VARCHAR(250)" />
+			<column name="spares_used_items_replaced3" type="VARCHAR(250)" />
+			<column name="spares_used_items_replaced4" type="VARCHAR(250)" />
+			<column name="spares_used_items_replaced5" type="VARCHAR(250)" />
+			<column name="spares_used_items_replaced6" type="VARCHAR(250)" />
+			<column name="cosumables_used1" type="VARCHAR(250)" />
+			<column name="cosumables_used2" type="VARCHAR(250)" />
+			<column name="cosumables_used3" type="VARCHAR(250)" />
+			<column name="cosumables_used4" type="VARCHAR(250)" />
+			<column name="cosumables_used5" type="VARCHAR(250)" />
+			<column name="cosumables_used6" type="VARCHAR(250)" />
+			<column name="run_hours_after_pmd_g1" type="BIGINT" />
+			<column name="run_hour_after_pmd_g2" type="BIGINT" />
+			<column name="user_id" type="BIGINT" />
+			<column defaultValueComputed="CURRENT_TIMESTAMP" name="created_at"
+				type="TIMESTAMP">
+				<constraints nullable="false" />
+			</column>
+			<column name="version" type="INT" />
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1366412359126-4">
+		<createTable tableName="permission">
+			<column autoIncrement="true" name="id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true" />
+			</column>
+			<column name="name" type="VARCHAR(250)" />
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1366412359126-5">
+		<createTable tableName="role">
+			<column autoIncrement="true" name="id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true" />
+			</column>
+			<column name="name" type="VARCHAR(250)" />
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1366412359126-6">
+		<createTable tableName="role_permission">
+			<column autoIncrement="true" name="id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true" />
+			</column>
+			<column name="role_id" type="BIGINT" />
+			<column name="permission_id" type="BIGINT" />
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1366412359126-7">
+		<createTable tableName="routine_visit">
+			<column autoIncrement="true" name="id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true" />
+			</column>
+			<column name="site_id" type="BIGINT" />
+			<column name="access_code" type="BIGINT" />
+			<column name="diesel_level_t1" type="BIGINT" />
+			<column name="diesel_level_t2" type="BIGINT" />
+			<column name="run_hour_gen1" type="BIGINT" />
+			<column name="run_hour_gen2" type="BIGINT" />
+			<column name="voltage_nr_volts" type="BIGINT" />
+			<column name="voltage_ny_volts" type="BIGINT" />
+			<column name="voltage_nb_volts" type="BIGINT" />
+			<column name="load_r_phase_amps" type="BIGINT" />
+			<column name="load_y_phase_amps" type="BIGINT" />
+			<column name="load_b_phase_amps" type="BIGINT" />
+			<column name="rectifier_op_voltage" type="BIGINT" />
+			<column name="rectifier_op_current_amp" type="BIGINT" />
+			<column name="battery_capcity_v" type="BIGINT" />
+			<column name="battery_capcity_ah" type="BIGINT" />
+			<column name="ats_functional" type="BIT" />
+			<column name="ats_sysncronising" type="BIT" />
+			<column name="drn_book_at_site" type="BIT" />
+			<column name="diesel_log_book_maintained" type="BIT" />
+			<column name="user_id" type="BIGINT" />
+			<column defaultValueComputed="CURRENT_TIMESTAMP" name="created_at"
+				type="TIMESTAMP">
+				<constraints nullable="false" />
+			</column>
+			<column name="version" type="INT" />
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1366412359126-8">
+		<createTable tableName="site">
+			<column autoIncrement="true" name="id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true" />
+			</column>
+			<column name="name" type="VARCHAR(250)" />
+			<column defaultValueComputed="CURRENT_TIMESTAMP" name="created_at"
+				type="TIMESTAMP">
+				<constraints nullable="false" />
+			</column>
+			<column name="version" type="INT" />
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1366412359126-9">
+		<createTable tableName="user">
+			<column autoIncrement="true" name="id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true" />
+			</column>
+			<column name="username" type="VARCHAR(250)" />
+			<column name="password" type="VARCHAR(250)" />
+			<column name="first_name" type="VARCHAR(250)" />
+			<column name="last_name" type="VARCHAR(250)" />
+			<column name="email" type="VARCHAR(250)" />
+			<column name="enabled" type="BIT" />
+			<column defaultValueComputed="CURRENT_TIMESTAMP" name="created_at"
+				type="TIMESTAMP">
+				<constraints nullable="false" />
+			</column>
+			<column name="version" type="INT" />
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1366412359126-10">
+		<createTable tableName="user_role">
+			<column autoIncrement="true" name="id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true" />
+			</column>
+			<column name="user_id" type="BIGINT" />
+			<column name="role_id" type="BIGINT" />
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1366412359126-11">
+		<addForeignKeyConstraint baseColumnNames="site_id"
+			baseTableName="call_out_visit" constraintName="call_out_visit_ibfk_1"
+			deferrable="false" initiallyDeferred="false" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="site"
+			referencesUniqueColumn="false" />
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1366412359126-12">
+		<addForeignKeyConstraint baseColumnNames="user_id"
+			baseTableName="call_out_visit" constraintName="call_out_visit_ibfk_2"
+			deferrable="false" initiallyDeferred="false" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="user"
+			referencesUniqueColumn="false" />
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1366412359126-13">
+		<addForeignKeyConstraint baseColumnNames="site_id"
+			baseTableName="diesel_visit" constraintName="diesel_visit_ibfk_1"
+			deferrable="false" initiallyDeferred="false" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="site"
+			referencesUniqueColumn="false" />
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1366412359126-14">
+		<addForeignKeyConstraint baseColumnNames="user_id"
+			baseTableName="diesel_visit" constraintName="diesel_visit_ibfk_2"
+			deferrable="false" initiallyDeferred="false" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="user"
+			referencesUniqueColumn="false" />
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1366412359126-15">
+		<addForeignKeyConstraint baseColumnNames="site_id"
+			baseTableName="maintenance_visit" constraintName="maintenance_visit_ibfk_1"
+			deferrable="false" initiallyDeferred="false" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="site"
+			referencesUniqueColumn="false" />
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1366412359126-16">
+		<addForeignKeyConstraint baseColumnNames="user_id"
+			baseTableName="maintenance_visit" constraintName="maintenance_visit_ibfk_2"
+			deferrable="false" initiallyDeferred="false" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="user"
+			referencesUniqueColumn="false" />
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1366412359126-17">
+		<addForeignKeyConstraint baseColumnNames="permission_id"
+			baseTableName="role_permission" constraintName="role_permission_ibfk_2"
+			deferrable="false" initiallyDeferred="false" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="permission"
+			referencesUniqueColumn="false" />
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1366412359126-18">
+		<addForeignKeyConstraint baseColumnNames="role_id"
+			baseTableName="role_permission" constraintName="role_permission_ibfk_1"
+			deferrable="false" initiallyDeferred="false" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="role"
+			referencesUniqueColumn="false" />
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1366412359126-19">
+		<addForeignKeyConstraint baseColumnNames="site_id"
+			baseTableName="routine_visit" constraintName="routine_visit_ibfk_1"
+			deferrable="false" initiallyDeferred="false" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="site"
+			referencesUniqueColumn="false" />
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1366412359126-20">
+		<addForeignKeyConstraint baseColumnNames="user_id"
+			baseTableName="routine_visit" constraintName="routine_visit_ibfk_2"
+			deferrable="false" initiallyDeferred="false" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="user"
+			referencesUniqueColumn="false" />
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1366412359126-21">
+		<addForeignKeyConstraint baseColumnNames="role_id"
+			baseTableName="user_role" constraintName="user_role_ibfk_1"
+			deferrable="false" initiallyDeferred="false" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="role"
+			referencesUniqueColumn="false" />
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1366412359126-22">
+		<addForeignKeyConstraint baseColumnNames="user_id"
+			baseTableName="user_role" constraintName="user_role_ibfk_2"
+			deferrable="false" initiallyDeferred="false" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="user"
+			referencesUniqueColumn="false" />
+	</changeSet>
+
+	<changeSet author="shiv prasad khillar" id="1366412359126-23">
+		<modifyDataType tableName="routine_visit" columnName="access_code"
+			newDataType="varchar(255)" />
+	</changeSet>
+
+	<changeSet author="shiv prasad khillar" id="1367592120329-1">
+		<createTable tableName="QRTZ_BLOB_TRIGGERS">
+			<column name="TRIGGER_NAME" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="TRIGGER_GROUP" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="BLOB_DATA" type="BLOB" />
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1367592120329-2">
+		<createTable tableName="QRTZ_CALENDARS">
+			<column name="CALENDAR_NAME" type="VARCHAR(200)">
+				<constraints nullable="false" primaryKey="true" />
+			</column>
+			<column name="CALENDAR" type="BLOB">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1367592120329-3">
+		<createTable tableName="QRTZ_CRON_TRIGGERS">
+			<column name="TRIGGER_NAME" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="TRIGGER_GROUP" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="CRON_EXPRESSION" type="VARCHAR(120)">
+				<constraints nullable="false" />
+			</column>
+			<column name="TIME_ZONE_ID" type="VARCHAR(80)" />
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1367592120329-4">
+		<createTable tableName="QRTZ_FIRED_TRIGGERS">
+			<column name="ENTRY_ID" type="VARCHAR(95)">
+				<constraints nullable="false" primaryKey="true" />
+			</column>
+			<column name="TRIGGER_NAME" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="TRIGGER_GROUP" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="IS_VOLATILE" type="VARCHAR(1)">
+				<constraints nullable="false" />
+			</column>
+			<column name="INSTANCE_NAME" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="FIRED_TIME" type="BIGINT">
+				<constraints nullable="false" />
+			</column>
+			<column name="PRIORITY" type="INT">
+				<constraints nullable="false" />
+			</column>
+			<column name="STATE" type="VARCHAR(16)">
+				<constraints nullable="false" />
+			</column>
+			<column name="JOB_NAME" type="VARCHAR(200)" />
+			<column name="JOB_GROUP" type="VARCHAR(200)" />
+			<column name="IS_STATEFUL" type="VARCHAR(1)" />
+			<column name="REQUESTS_RECOVERY" type="VARCHAR(1)" />
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1367592120329-5">
+		<createTable tableName="QRTZ_JOB_DETAILS">
+			<column name="JOB_NAME" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="JOB_GROUP" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="DESCRIPTION" type="VARCHAR(250)" />
+			<column name="JOB_CLASS_NAME" type="VARCHAR(250)">
+				<constraints nullable="false" />
+			</column>
+			<column name="IS_DURABLE" type="VARCHAR(1)">
+				<constraints nullable="false" />
+			</column>
+			<column name="IS_VOLATILE" type="VARCHAR(1)">
+				<constraints nullable="false" />
+			</column>
+			<column name="IS_STATEFUL" type="VARCHAR(1)">
+				<constraints nullable="false" />
+			</column>
+			<column name="REQUESTS_RECOVERY" type="VARCHAR(1)">
+				<constraints nullable="false" />
+			</column>
+			<column name="JOB_DATA" type="BLOB" />
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1367592120329-6">
+		<createTable tableName="QRTZ_JOB_LISTENERS">
+			<column name="JOB_NAME" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="JOB_GROUP" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="JOB_LISTENER" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1367592120329-7">
+		<createTable tableName="QRTZ_LOCKS">
+			<column name="LOCK_NAME" type="VARCHAR(40)">
+				<constraints nullable="false" primaryKey="true" />
+			</column>
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1367592120329-8">
+		<createTable tableName="QRTZ_PAUSED_TRIGGER_GRPS">
+			<column name="TRIGGER_GROUP" type="VARCHAR(200)">
+				<constraints nullable="false" primaryKey="true" />
+			</column>
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1367592120329-9">
+		<createTable tableName="QRTZ_SCHEDULER_STATE">
+			<column name="INSTANCE_NAME" type="VARCHAR(200)">
+				<constraints nullable="false" primaryKey="true" />
+			</column>
+			<column name="LAST_CHECKIN_TIME" type="BIGINT">
+				<constraints nullable="false" />
+			</column>
+			<column name="CHECKIN_INTERVAL" type="BIGINT">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1367592120329-10">
+		<createTable tableName="QRTZ_SIMPLE_TRIGGERS">
+			<column name="TRIGGER_NAME" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="TRIGGER_GROUP" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="REPEAT_COUNT" type="BIGINT">
+				<constraints nullable="false" />
+			</column>
+			<column name="REPEAT_INTERVAL" type="BIGINT">
+				<constraints nullable="false" />
+			</column>
+			<column name="TIMES_TRIGGERED" type="BIGINT">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1367592120329-11">
+		<createTable tableName="QRTZ_TRIGGER_LISTENERS">
+			<column name="TRIGGER_NAME" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="TRIGGER_GROUP" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="TRIGGER_LISTENER" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1367592120329-12">
+		<createTable tableName="QRTZ_TRIGGERS">
+			<column name="TRIGGER_NAME" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="TRIGGER_GROUP" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="JOB_NAME" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="JOB_GROUP" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="IS_VOLATILE" type="VARCHAR(1)">
+				<constraints nullable="false" />
+			</column>
+			<column name="DESCRIPTION" type="VARCHAR(250)" />
+			<column name="NEXT_FIRE_TIME" type="BIGINT" />
+			<column name="PREV_FIRE_TIME" type="BIGINT" />
+			<column name="PRIORITY" type="INT" />
+			<column name="TRIGGER_STATE" type="VARCHAR(16)">
+				<constraints nullable="false" />
+			</column>
+			<column name="TRIGGER_TYPE" type="VARCHAR(8)">
+				<constraints nullable="false" />
+			</column>
+			<column name="START_TIME" type="BIGINT">
+				<constraints nullable="false" />
+			</column>
+			<column name="END_TIME" type="BIGINT" />
+			<column name="CALENDAR_NAME" type="VARCHAR(200)" />
+			<column name="MISFIRE_INSTR" type="SMALLINT" />
+			<column name="JOB_DATA" type="BLOB" />
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1367592120329-13">
+		<addPrimaryKey columnNames="TRIGGER_NAME, TRIGGER_GROUP"
+			tableName="QRTZ_BLOB_TRIGGERS" />
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1367592120329-14">
+		<addPrimaryKey columnNames="TRIGGER_NAME, TRIGGER_GROUP"
+			tableName="QRTZ_CRON_TRIGGERS" />
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1367592120329-15">
+		<addPrimaryKey columnNames="JOB_NAME, JOB_GROUP"
+			tableName="QRTZ_JOB_DETAILS" />
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1367592120329-16">
+		<addPrimaryKey columnNames="JOB_NAME, JOB_GROUP, JOB_LISTENER"
+			tableName="QRTZ_JOB_LISTENERS" />
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1367592120329-17">
+		<addPrimaryKey columnNames="TRIGGER_NAME, TRIGGER_GROUP"
+			tableName="QRTZ_SIMPLE_TRIGGERS" />
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1367592120329-18">
+		<addPrimaryKey columnNames="TRIGGER_NAME, TRIGGER_GROUP"
+			tableName="QRTZ_TRIGGERS" />
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1367592120329-19">
+		<addPrimaryKey columnNames="TRIGGER_NAME, TRIGGER_GROUP, TRIGGER_LISTENER"
+			tableName="QRTZ_TRIGGER_LISTENERS" />
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1367592120329-20">
+		<addForeignKeyConstraint baseColumnNames="TRIGGER_NAME, TRIGGER_GROUP"
+			baseTableName="QRTZ_BLOB_TRIGGERS" constraintName="QRTZ_BLOB_TRIGGERS_ibfk_1"
+			deferrable="false" initiallyDeferred="false" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="TRIGGER_NAME, TRIGGER_GROUP"
+			referencedTableName="QRTZ_TRIGGERS" referencesUniqueColumn="false" />
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1367592120329-21">
+		<addForeignKeyConstraint baseColumnNames="TRIGGER_NAME, TRIGGER_GROUP"
+			baseTableName="QRTZ_CRON_TRIGGERS" constraintName="QRTZ_CRON_TRIGGERS_ibfk_1"
+			deferrable="false" initiallyDeferred="false" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="TRIGGER_NAME, TRIGGER_GROUP"
+			referencedTableName="QRTZ_TRIGGERS" referencesUniqueColumn="false" />
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1367592120329-22">
+		<addForeignKeyConstraint baseColumnNames="JOB_NAME, JOB_GROUP"
+			baseTableName="QRTZ_JOB_LISTENERS" constraintName="QRTZ_JOB_LISTENERS_ibfk_1"
+			deferrable="false" initiallyDeferred="false" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="JOB_NAME, JOB_GROUP"
+			referencedTableName="QRTZ_JOB_DETAILS" referencesUniqueColumn="false" />
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1367592120329-23">
+		<addForeignKeyConstraint baseColumnNames="TRIGGER_NAME, TRIGGER_GROUP"
+			baseTableName="QRTZ_SIMPLE_TRIGGERS" constraintName="QRTZ_SIMPLE_TRIGGERS_ibfk_1"
+			deferrable="false" initiallyDeferred="false" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="TRIGGER_NAME, TRIGGER_GROUP"
+			referencedTableName="QRTZ_TRIGGERS" referencesUniqueColumn="false" />
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1367592120329-24">
+		<addForeignKeyConstraint baseColumnNames="TRIGGER_NAME, TRIGGER_GROUP"
+			baseTableName="QRTZ_TRIGGER_LISTENERS" constraintName="QRTZ_TRIGGER_LISTENERS_ibfk_1"
+			deferrable="false" initiallyDeferred="false" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="TRIGGER_NAME, TRIGGER_GROUP"
+			referencedTableName="QRTZ_TRIGGERS" referencesUniqueColumn="false" />
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1367592120329-25">
+		<addForeignKeyConstraint baseColumnNames="JOB_NAME, JOB_GROUP"
+			baseTableName="QRTZ_TRIGGERS" constraintName="QRTZ_TRIGGERS_ibfk_1"
+			deferrable="false" initiallyDeferred="false" onDelete="NO ACTION"
+			onUpdate="NO ACTION" referencedColumnNames="JOB_NAME, JOB_GROUP"
+			referencedTableName="QRTZ_JOB_DETAILS" referencesUniqueColumn="false" />
+	</changeSet>
+	<changeSet id="1367592120329-26" author="shiv prasad khillar">
+		<insert tableName="QRTZ_LOCKS">
+			<column name="LOCK_NAME" value="CALENDAR_ACCESS"></column>
+		</insert>
+		<insert tableName="QRTZ_LOCKS">
+			<column name="LOCK_NAME" value="JOB_ACCESS"></column>
+		</insert>
+		<insert tableName="QRTZ_LOCKS">
+			<column name="LOCK_NAME" value="MISFIRE_ACCESS"></column>
+		</insert>
+		<insert tableName="QRTZ_LOCKS">
+			<column name="LOCK_NAME" value="STATE_ACCESS"></column>
+		</insert>
+		<insert tableName="QRTZ_LOCKS">
+			<column name="LOCK_NAME" value="TRIGGER_ACCESS"></column>
+		</insert>
+	</changeSet>
+
+	<changeSet author="shiv prasad khillar" id="1367592120329-27">
+		<createTable tableName="job_history">
+			<column autoIncrement="true" name="id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true" />
+			</column>
+			<column name="job_name" type="VARCHAR(250)">
+				<constraints nullable="false" />
+			</column>
+			<column name="status" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="description" type="VARCHAR(500)" />
+			<column name="start_time" type="TIMESTAMP" />
+			<column name="end_time" type="TIMESTAMP" />
+			<column name="version" type="INT" />
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+
+	<changeSet author="shiv prasad khillar" id="1367592120329-28">
+		<addColumn tableName="role">
+			<column name="description" type="varchar(250)"></column>
+		</addColumn>
+	</changeSet>
+
+	<changeSet author="shiv prasad khillar" id="1367592120329-29">
+		<addColumn tableName="site">
+			<column name="state" type="varchar(100)"></column>
+		</addColumn>
+		<modifySql dbms="mysql">
+			<append value=" after name" />
+		</modifySql>
+	</changeSet>
+	
+	<changeSet author="shiv prasad khillar" id="1367592120329-30">
+		<createTable tableName="spare">
+			<column autoIncrement="true" name="id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true" />
+			</column>
+			<column name="name" type="VARCHAR(250)" />
+			<column defaultValueComputed="CURRENT_TIMESTAMP" name="created_at"
+				type="TIMESTAMP">
+				<constraints nullable="false" />
+			</column>
+			<column name="version" type="INT" />
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	
+	<changeSet author="shiv prasad khillar" id="1367592120329-31">
+		<createTable tableName="fault">
+			<column autoIncrement="true" name="id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true" />
+			</column>
+			<column name="name" type="VARCHAR(250)" />
+			<column defaultValueComputed="CURRENT_TIMESTAMP" name="created_at"
+				type="TIMESTAMP">
+				<constraints nullable="false" />
+			</column>
+			<column name="version" type="INT" />
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	
+	<changeSet author="shiv prasad khillar" id="1367592120329-32">
+		<createTable tableName="client">
+			<column autoIncrement="true" name="id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true" />
+			</column>
+			<column name="name" type="VARCHAR(250)" />
+			<column defaultValueComputed="CURRENT_TIMESTAMP" name="created_at"
+				type="TIMESTAMP">
+				<constraints nullable="false" />
+			</column>
+			<column name="version" type="INT" />
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	
+	<changeSet author="shiv prasad khillar" id="1367592120329-33">
+		<addColumn tableName="diesel_visit">
+			<column name="hybrid_or_piu_hr_per_day" type="BIGINT"></column>
+		</addColumn>
+		<addColumn tableName="diesel_visit">
+			<column name="hybrid_or_piu_installed" type="BIT"></column>
+		</addColumn>
+		<addColumn tableName="diesel_visit">
+			<column name="phcn_hr_per_day" type="BIGINT"></column>
+		</addColumn>
+		<addColumn tableName="diesel_visit">
+			<column name="phcn_installed" type="BIT"></column>
+		</addColumn>
+		<modifySql dbms="mysql">
+			<append value=" after diesel_log_book_maintained" />
+		</modifySql>
+	</changeSet>
+	
+	<changeSet author="shiv prasad khillar" id="1367592120329-34">
+		<createTable tableName="maintenance_visit_category">
+			<column autoIncrement="true" name="id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true" />
+			</column>
+			<column name="name" type="VARCHAR(250)" />
+			<column defaultValueComputed="CURRENT_TIMESTAMP" name="created_at"
+				type="TIMESTAMP">
+				<constraints nullable="false" />
+			</column>
+			<column name="version" type="INT" />
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	
+	<changeSet author="shiv prasad khillar" id="1367592120329-35">
+		<addColumn tableName="routine_visit">
+			<column name="aircon_shelter4_cooling" type="VARCHAR(25)"></column>
+		</addColumn>
+		<addColumn tableName="routine_visit">
+			<column name="aircon_shelter3_cooling" type="VARCHAR(25)"></column>
+		</addColumn>
+		<addColumn tableName="routine_visit">
+			<column name="aircon_shelter2_cooling" type="VARCHAR(25)"></column>
+		</addColumn>
+		<addColumn tableName="routine_visit">
+			<column name="aircon_shelter1_cooling" type="VARCHAR(25)"></column>
+		</addColumn>
+		<modifySql dbms="mysql">
+			<append value=" after diesel_log_book_maintained" />
+		</modifySql>
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1367592120329-36">
+		<addColumn tableName="user">
+			<column name="phone" type="VARCHAR(25)"></column>
+		</addColumn>
+		<modifySql dbms="mysql">
+			<append value=" after enabled" />
+		</modifySql>
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1367592120329-37">
+		<addColumn tableName="role">
+			<column name="role_name" type="VARCHAR(100)"></column>
+		</addColumn>
+		<modifySql dbms="mysql">
+			<append value=" after name"/>
+		</modifySql>
+	</changeSet>
+	<changeSet author="satyam srivastava" id="1367592120329-38">
+		<addColumn tableName="job_history">
+			<column name="path" type="VARCHAR(255)"></column>
+		</addColumn>
+		<modifySql dbms="mysql">
+			<append value=" after status"/>
+		</modifySql>
+	</changeSet>
+	<changeSet author="satyam srivastava" id="1367592120329-39">
+    <dropForeignKeyConstraint
+            baseTableName="call_out_visit"
+            constraintName="call_out_visit_ibfk_2"/>
+	</changeSet>	
+	<changeSet author="satyam srivastava" id="1367592120329-40">
+		<addForeignKeyConstraint baseColumnNames="user_id"
+			baseTableName="call_out_visit" constraintName="call_out_visit_ibfk_2"
+			deferrable="false" initiallyDeferred="false" onDelete="CASCADE"
+			onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="user"
+			referencesUniqueColumn="false" />
+	</changeSet>
+	<changeSet author="satyam srivastava" id="1367592120329-41">
+    <dropForeignKeyConstraint
+            baseTableName="diesel_visit"
+            constraintName="diesel_visit_ibfk_2"/>
+	</changeSet>
+	<changeSet author="satyam srivastava" id="1367592120329-42">
+		<addForeignKeyConstraint baseColumnNames="user_id"
+			baseTableName="diesel_visit" constraintName="diesel_visit_ibfk_2"
+			deferrable="false" initiallyDeferred="false" onDelete="CASCADE"
+			onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="user"
+			referencesUniqueColumn="false" />
+	</changeSet>
+	<changeSet author="satyam srivastava" id="1367592120329-43">
+    <dropForeignKeyConstraint
+            baseTableName="maintenance_visit"
+            constraintName="maintenance_visit_ibfk_2"/>
+	</changeSet>
+	<changeSet author="satyam srivastava" id="1366412359126-44">
+		<addForeignKeyConstraint baseColumnNames="user_id"
+			baseTableName="maintenance_visit" constraintName="maintenance_visit_ibfk_2"
+			deferrable="false" initiallyDeferred="false" onDelete="CASCADE"
+			onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="user"
+			referencesUniqueColumn="false" />
+	</changeSet>
+	<changeSet author="satyam srivastava" id="1367592120329-45">
+    <dropForeignKeyConstraint
+            baseTableName="routine_visit"
+            constraintName="routine_visit_ibfk_2"/>
+	</changeSet>
+	<changeSet author="shiv prasad khillar" id="1366412359126-46">
+		<addForeignKeyConstraint baseColumnNames="user_id"
+			baseTableName="routine_visit" constraintName="routine_visit_ibfk_2"
+			deferrable="false" initiallyDeferred="false" onDelete="CASCADE"
+			onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="user"
+			referencesUniqueColumn="false" />
+	</changeSet>	
+	
+	<changeSet author="shiv prasad khillar" id="1366412359126-47">
+		<createTable tableName="android_application_download_history">
+			<column autoIncrement="true" name="id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true" />
+			</column>
+			<column name="user_id" type="BIGINT" />
+			<column name="user_device_id" type="VARCHAR(250)" />
+			<column defaultValueComputed="CURRENT_TIMESTAMP" name="created_at"
+				type="TIMESTAMP">
+				<constraints nullable="false" />
+			</column>
+			<column name="version" type="INT" />
+		</createTable>
+		<modifySql dbms="mysql">
+			<append value=" engine innodb" />
+		</modifySql>
+	</changeSet>
+	
+	<changeSet author="shiv prasad khillar" id="1366412359126-48">
+		<addForeignKeyConstraint baseColumnNames="user_id"
+			baseTableName="android_application_download_history" constraintName="android_application_download_history_user_fk1"
+			deferrable="false" initiallyDeferred="false" onDelete="CASCADE"
+			onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="user"
+			referencesUniqueColumn="false" />
+	</changeSet>	
+	
+	<changeSet author="satyam srivastava" id="1366412359126-49">
+		<addColumn tableName="diesel_visit">
+			<column name="diesel_density" type="float(3,2)"></column>
+		</addColumn>
+		<modifySql dbms="mysql">
+			<append value=" after diesel_received_ltrs"/>
+		</modifySql>
+	</changeSet>
+</databaseChangeLog>

@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll2_dv"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
+
+    <ScrollView
+        android:id="@+id/tableLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <TableLayout
+            android:id="@+id/tableLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <LinearLayout
+                android:id="@+id/header"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@layout/header_gradient"
+                android:orientation="horizontal"
+                android:paddingBottom="5dip"
+                android:paddingTop="5dip" >
+
+                <!-- Logo Start -->
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:src="@drawable/logo" />
+                <!-- Logo Ends -->
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|top"
+                    android:text="DIESEL VISIT"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dip"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Site ID"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/visitSiteId"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:singleLine="true"
+                    android:hint="XX/XX/XX/NUM"
+                    android:tag='siteId={"required":true,"siteIdCheck":true}'/>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Access Code"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/button1"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:hint="N Characters"
+                    android:tag='accessCode={"required":true}' />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="DRN Number"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/button1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:singleLine="true"
+                    android:maxLength="7"
+                    android:hint="Num- 7 digit"
+                    android:tag="drnNumber"/>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Diesel Transfer/Bulk Supply"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioGroup
+                    android:id="@+id/radioTransferBulk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:tag="dieselTransferOrBulkSupply"
+                    >
+
+                    <RadioButton
+                        android:id="@+id/radioTransfer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/Transfer" />
+
+                    <RadioButton
+                        android:id="@+id/radioBulk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/Bulk" />
+                </RadioGroup>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Transfer from Site ID"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                
+                 <AutoCompleteTextView
+                    android:id="@+id/etTransfer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:singleLine="true"
+                    android:hint="XX/XX/XX/NUM"
+                    android:tag="transferredSite" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Bulk Vendor Name"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/etBulk"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:prompt="@string/spinner_title"
+                    android:tag="bulkNameOfVendor" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Diesel level in T1 before receipt"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/button1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:singleLine="true"
+                    android:maxLength="4"
+                    android:hint="[0-6000]"
+                    android:tag='dieselLevelT1BeforeVisit={"min":0,"max":6000}'/>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Diesel level in T2 before receipt"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/button1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:singleLine="true"
+                    android:maxLength="4"
+                    android:hint="[0-6000]"
+                    android:tag='dieselLevelT2BeforeVisit={"min":0,"max":6000}' />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Diesel received(Ltrs)"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/button1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:singleLine="true"
+                    android:maxLength="4"
+                    android:hint="[0-6000]"
+                    android:tag='dieselReceivedLtrs={"min":0,"max":6000}' />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Run hours of Gen1"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/button1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:singleLine="true"
+                    android:maxLength="5"
+                    android:hint="[0-30000]"
+                    android:tag='runHourGen1={"min":0,"max":30000}' />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Run hours of Gen2"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/button1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:singleLine="true"
+                    android:maxLength="5"
+                    android:hint="[0-30000]"
+                    android:tag='runHourGen2={"min":0,"max":30000}' />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="DRN book at site"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioGroup
+                    android:id="@+id/radioDrnBookAtSite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:tag="drnBookAtSite" >
+
+                    <RadioButton
+                        android:id="@+id/radioyes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/Yes" />
+
+                    <RadioButton
+                        android:id="@+id/radiono"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/No" />
+                </RadioGroup>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Diesel log book maintained"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioGroup
+                    android:id="@+id/radioDieselLogBookMaintained"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:tag="dieselLogBookMaintained" >
+
+                    <RadioButton
+                        android:id="@+id/radioyes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/Yes" />
+
+                    <RadioButton
+                        android:id="@+id/radiono"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/No" />
+                </RadioGroup>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="PHCN Installed"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioGroup
+                    android:id="@+id/radioPhcnInstalled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:tag="phcnInstalled" >
+
+                    <RadioButton
+                        android:id="@+id/radioPhcnInstalledYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/Yes" />
+
+                    <RadioButton
+                        android:id="@+id/radioPhcnInstalledNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/No" />
+                </RadioGroup>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="PHCN Hours per day"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/etPHCNHoursPerDay"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:singleLine="true"
+                    android:maxLength="2"
+                    android:hint="[0-24]"
+                    android:tag='phcnHrsPerDay={"min":0,"max":24}' />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Hybrid/PIU Installed"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <RadioGroup
+                    android:id="@+id/radioHybridPiuInstalled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:tag="hybridOrPiuInstalled" >
+
+                    <RadioButton
+                        android:id="@+id/radioHybridPiuInstalledYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/Yes" />
+
+                    <RadioButton
+                        android:id="@+id/radioHybridPiuInstalledNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/No" />
+                </RadioGroup>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Hybrid/PIU Hours per day"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/etHybridPiuHoursPerDay"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="50"
+                    android:background="@drawable/shape"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:shape="rectangle"
+                    android:singleLine="true"
+                    android:maxLength="2"
+                    android:hint="[0-24]"
+                    android:tag='hybridOrPiuHrsPerDay={"min":0,"max":24}' />
+            </TableRow>
+            
+             <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:text="Diesel Density"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spinnerDieselDensity"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:prompt="@string/spinner_title"
+                    android:tag="dieselDensity" />
+            </TableRow>
+            
+
+            <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/header"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="10dip">
+
+                <Button
+                    android:id="@+id/btn_dv_submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="2dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_weight="1"
+                    android:background="@drawable/button"
+                    android:paddingLeft="45dip"
+                    android:paddingRight="45dip"
+                    android:text="Save"
+                    android:gravity="center"
+                    android:textColor="#333333" />
+           </LinearLayout>
+        </TableLayout>
+    </ScrollView>
+
+</LinearLayout>
